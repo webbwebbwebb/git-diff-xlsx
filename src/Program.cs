@@ -21,16 +21,17 @@ namespace git_diff_xlsx
 
         static void Parse(string inputFilePath, TextWriter output)
         {
-            var inputFile = new FileInfo(inputFilePath);
-            var package = new ExcelPackage(inputFile);
-
-            PrintNames(package.Workbook, output);
-
-            PrintLastEditedBy(package.Workbook, output);
-
-            foreach (var sheet in package.Workbook.Worksheets.OrderBy(x => x.Index))
+            using (var inputStream = new FileStream(inputFilePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+            using (var package = new ExcelPackage(inputStream))
             {
-                PrintSheetContent(sheet, output);
+                PrintNames(package.Workbook, output);
+
+                PrintLastEditedBy(package.Workbook, output);
+
+                foreach (var sheet in package.Workbook.Worksheets.OrderBy(x => x.Index))
+                {
+                    PrintSheetContent(sheet, output);
+                }
             }
         }
 
