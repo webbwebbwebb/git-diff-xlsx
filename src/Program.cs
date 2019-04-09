@@ -11,11 +11,21 @@ namespace git_diff_xlsx
         {
             if (args.Length != 1)
             {
-                Console.WriteLine("usage: git-diff-xlsx.exe infile.xlsx");
+                Console.Error.WriteLine("Usage: git-diff-xlsx.exe infile.xlsx");
                 return -1;
             }
 
-            Parse(args[0], Console.Out);
+            var inputFilePath = args[0];
+
+            try
+            {
+                Parse(inputFilePath, Console.Out);
+            }
+            catch (Exception ex)
+            {
+                Console.Error.WriteLine(ex.Message);
+            }
+            
             return 0;
         }
 
