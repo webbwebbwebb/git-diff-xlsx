@@ -58,7 +58,7 @@ namespace git_diff_xlsx
         static void PrintSheetContent(ExcelWorksheet sheet, TextWriter output)
         {
             output.WriteLine("=================================");
-            output.WriteLine("Sheet: " + sheet.Name + "[ " + sheet.RowCount() + " , " + sheet.ColumnCount() + " ]");
+            output.WriteLine($"Sheet: {sheet.Name} [ {sheet.RowCount()} , {sheet.ColumnCount()} ]");
             output.WriteLine("=================================");
 
             for (int row = 1; row < sheet.RowCount() + 1; row++)
@@ -66,9 +66,11 @@ namespace git_diff_xlsx
                 for (int column = 1; column < sheet.ColumnCount() + 1; column++)
                 {
                     var cell = sheet.Cells[row, column];
-                    if (!string.IsNullOrEmpty(cell.Text))
+                    var cellText = cell.Text;
+                    var cellFormula = cell.Formula;
+                    if (!string.IsNullOrEmpty(cellText) || !string.IsNullOrEmpty(cellFormula))
                     {
-                        output.WriteLine("    " + cell.Address + ": " + cell.Text);
+                        output.WriteLine($"    {cell.Address}: {cellText} {cellFormula}");
                     }
                 }
             }
