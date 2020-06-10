@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "git-diff-xlsx", "git-diff-xlsx.csproj", "{77B1C34C-9048-4189-B551-5A63B71F51DA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "git-diff-xlsx", "git-diff-xlsx\git-diff-xlsx.csproj", "{77B1C34C-9048-4189-B551-5A63B71F51DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "git-diff-xlsx.tests", "git-diff-xlsx.tests\git-diff-xlsx.tests.csproj", "{3EDA3B82-E0D9-4475-8DA9-D0AFE8F19AE2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +17,15 @@ Global
 		{77B1C34C-9048-4189-B551-5A63B71F51DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77B1C34C-9048-4189-B551-5A63B71F51DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77B1C34C-9048-4189-B551-5A63B71F51DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EDA3B82-E0D9-4475-8DA9-D0AFE8F19AE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EDA3B82-E0D9-4475-8DA9-D0AFE8F19AE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EDA3B82-E0D9-4475-8DA9-D0AFE8F19AE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EDA3B82-E0D9-4475-8DA9-D0AFE8F19AE2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {950839B2-8CD7-4C63-B97F-4336A389044A}
 	EndGlobalSection
 EndGlobal

@@ -1,0 +1,7 @@
+﻿Sheet1
+File last edited by Mark Webb
+=================================
+Sheet: Sheet1 [ A1:A2 ]
+=================================
+    A1: Test123
+    A2: I am a text cell

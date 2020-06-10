@@ -1,0 +1,20 @@
+﻿Sheet1
+File last edited by Mark Webb
+=================================
+Sheet: Sheet1 [ A1:C6 ]
+=================================
+    A1: Id
+    B1: Name
+    C1: Cost
+    A2: 1
+    B2: Item 1
+    C2: 1.00
+    A3: 2
+    B3: Item 2
+    C3: 2.95
+    A4: 3
+    B4: Item 3
+    C4: 6.50
+    
+    B6: TOTAL
+    C6: 10.45   SUM(C2:C5)
