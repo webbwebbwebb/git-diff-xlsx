@@ -67,19 +67,19 @@ namespace git_diff_xlsx
 
         private void PrintSheetNames(Dictionary<string, string> sheetNames, TextWriter output)
         {
-            output.WriteLine(string.Join(",", sheetNames.Select(x => x.Value)));
+            output.Write($"{string.Join(",", sheetNames.Select(x => x.Value))}\n");
         }
 
         private void PrintLastEditedBy(PackageProperties documentProperties, TextWriter output)
         {
-            output.WriteLine("File last edited by " + documentProperties.LastModifiedBy);
+            output.Write($"File last edited by {documentProperties.LastModifiedBy}\n");
         }
 
         private void PrintSheetContent(WorksheetPart worksheetPart, string worksheetName, string[] sharedStringTable, Dictionary<int, string> numberingFormatsByStyleIndex, TextWriter output)
         {
-            output.WriteLine("=================================");
-            output.WriteLine($"Sheet: {worksheetName} [ {worksheetPart.Worksheet.SheetDimension.Reference.Value} ]");
-            output.WriteLine("=================================");
+            output.Write("=================================\n");
+            output.Write($"Sheet: {worksheetName} [ {worksheetPart.Worksheet.SheetDimension.Reference.Value} ]\n");
+            output.Write("=================================\n");
 
             var startElementHandlers = new Dictionary<Type, StartElementHandler>
             {

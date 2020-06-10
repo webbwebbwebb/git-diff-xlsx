@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace git_diff_xlsx.ElementHandlers
@@ -18,7 +19,7 @@ namespace git_diff_xlsx.ElementHandlers
         {
             if (cellContext != null)
             {
-                output.WriteLine("    " + Format(cellContext));
+                output.Write($"    {Format(cellContext)}\n");
             }
         }
 
