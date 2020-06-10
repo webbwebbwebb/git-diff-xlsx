@@ -19,6 +19,7 @@ namespace git_diff_xlsx
             {
                 using (var input = new FileStream(inputFilePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
                 {
+                    Console.OutputEncoding = System.Text.Encoding.UTF8;
                     var printer = new ExcelFilePrinter();
                     printer.Print(input, Console.Out);
                 }
