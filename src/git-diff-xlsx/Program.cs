@@ -7,9 +7,9 @@ namespace git_diff_xlsx
     {
         static int Main(string[] args)
         {
-            if (args.Length != 1)
+            if (args.Length != 1 || string.IsNullOrEmpty(args[0]))
             {
-                Console.Error.WriteLine("Usage: git-diff-xlsx.exe filename");
+                Console.Error.WriteLine("Usage: git-diff-xlsx filename");
                 return -1;
             }
 

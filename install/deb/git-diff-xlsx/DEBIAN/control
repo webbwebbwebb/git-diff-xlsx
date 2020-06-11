@@ -1,0 +1,10 @@
+Package: git-diff-xlsx
+Version: 0.0.1
+Section: custom
+Priority: optional
+Architecture: all
+Essential: no
+Installed-Size: 4568
+Depends: dotnet-runtime-3.1
+Maintainer: Mark Webb <github.com/webbwebbwebb>
+Description: Print content of .xlsx files in text format

@@ -250,3 +250,7 @@ paket-files/
 # JetBrains Rider
 .idea/
 *.sln.iml
+
+!install/deb/git-diff-xlsx/usr/bin/
+install/deb/*.deb
+install/deb/git-diff-xlsx/usr/lib/
