@@ -8,6 +8,8 @@
     <Product>git-diff-xlsx</Product>
     <Company>Summerhouse Software Limited</Company>
     <Copyright>Copyright © Summerhouse Software 2016-2020</Copyright>
+    <AssemblyVersion>0.0.1.0</AssemblyVersion>
+    <Version>0.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
