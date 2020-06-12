@@ -1,11 +1,11 @@
 # git-diff-xlsx
-Command line tool which provides a readable git diff of Excel .xslx files
+Command line tool which enables git to provide a readable diff of Excel .xslx files
 
 ## Installation
 Add these lines to .gitconfig
 ```
 [diff "git-diff-xlsx"]
-	textconv = path/to/git-diff-xlsx.exe
+	textconv = git-diff-xlsx
 ```
 
 Add this line to .gitattributes
