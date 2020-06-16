@@ -253,6 +253,5 @@ paket-files/
 
 # Install package directories
 install/chocolatey/git-diff-xlsx/tools
-!install/deb/git-diff-xlsx/usr/bin/
 install/deb/*.deb
-install/deb/git-diff-xlsx/usr/lib/
+install/deb/git-diff-xlsx
