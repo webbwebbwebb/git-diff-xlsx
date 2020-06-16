@@ -1,5 +1,5 @@
 Package: git-diff-xlsx
-Version: 0.0.1
+Version: ##<VERSION_NUMBER>##
 Section: custom
 Priority: optional
 Architecture: all

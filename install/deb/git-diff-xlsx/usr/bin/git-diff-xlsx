@@ -1,2 +1,0 @@
-#!/bin/bash
-dotnet /usr/lib/git-diff-xlsx/git-diff-xlsx.dll "$1"
