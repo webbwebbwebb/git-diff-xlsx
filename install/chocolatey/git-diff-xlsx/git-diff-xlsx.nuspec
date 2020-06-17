@@ -27,6 +27,9 @@ Add this line to .gitattributes
 ```
 *.xlsx diff=git-diff-xlsx
 ```]]></description>
+  <dependencies>
+    <dependency id="dotnetcore-runtime" version="3.1.0" />
+  </dependencies>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
