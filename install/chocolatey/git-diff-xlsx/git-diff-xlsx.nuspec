@@ -4,7 +4,7 @@
   <metadata>
     <id>git-diff-xlsx</id>
     <title>git-diff-xlsx</title>
-    <version></version>
+    <version>0.0.0</version>
     <authors>Mark Webb</authors>
     <summary>Command line tool which enables git to provide a readable diff of Excel .xslx files</summary>
     <projectUrl>https://github.com/webbwebbwebb/git-diff-xlsx</projectUrl>
