@@ -9,7 +9,7 @@
     <summary>Command line tool which enables git to provide a readable diff of Excel .xslx files</summary>
     <projectUrl>https://github.com/webbwebbwebb/git-diff-xlsx</projectUrl>
     <tags>git-diff-xlsx git diff xlsx</tags>
-    <iconUrl>https://cdn.statically.io/gh/webbwebbwebb/git-diff-xlsx/7592a53a/icon/diff-icon-256.png</iconUrl>
+    <iconUrl>https://cdn.statically.io/gh/webbwebbwebb/git-diff-xlsx/646e1c8d/icon/diff-icon-256.png</iconUrl>
     <licenseUrl>https://github.com/webbwebbwebb/git-diff-xlsx/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <owners>Mark Webb</owners>
