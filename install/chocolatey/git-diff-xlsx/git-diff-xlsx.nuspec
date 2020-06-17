@@ -3,8 +3,8 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>git-diff-xlsx</id>
-    <title>git-diff-xlsx (Portable)</title>
-    <version>0.0.1</version>
+    <title>git-diff-xlsx</title>
+    <version></version>
     <authors>Mark Webb</authors>
     <summary>Command line tool which enables git to provide a readable diff of Excel .xslx files</summary>
     <projectUrl>https://github.com/webbwebbwebb/git-diff-xlsx</projectUrl>
