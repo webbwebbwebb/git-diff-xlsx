@@ -252,6 +252,7 @@ paket-files/
 *.sln.iml
 
 # Install package directories
+install/chocolatey/*.zip
 install/chocolatey/git-diff-xlsx/tools
 install/deb/*.deb
 install/deb/git-diff-xlsx

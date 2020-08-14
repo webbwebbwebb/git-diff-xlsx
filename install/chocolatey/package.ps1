@@ -13,16 +13,32 @@ if($package_information -match '(?<=git-diff-xlsx\/)(\d+\.)?(\d+\.)?(\d+)') {
     throw 'Cannot determine version number'
 }
 
-# Purge output directory
-remove-item "$output_dir" -recurse -force
+Remove-Item "$script_dir\*.nupkg"
+Remove-Item "$script_dir\*.zip"
 
-# Copy contents of publish directory
-robocopy "$source_dir" "$output_dir" /MIR
+# Purge output directory
+Remove-Item "$output_dir" -Recurse -Force
+New-Item "$output_dir" -Force -ItemType "directory"
+
+# Archive contents of publish directory
+$release_zip_filename = "git-diff-xlsx.$version_number.zip"
+Compress-Archive "$source_dir\*" "$script_dir\$release_zip_filename"
+$checksum = (Get-FileHash "$script_dir\$release_zip_filename").Hash
+Copy-Item "$script_dir\$release_zip_filename" "$output_dir\$release_zip_filename"
+
+# Generate verification file
+$verification_content = Get-Content -Path "$package_dir\VERIFICATION.template.txt" -Raw
+$verification_content = $verification_content.Replace("[!!VERSION_NUMBER!!]", $version_number).Replace("[!!CHECKSUM!!]", $checksum)
+Out-File -FilePath "$output_dir\VERIFICATION.txt" -InputObject $verification_content
+
 # Copy licence
 Copy-Item "$script_dir\..\..\LICENSE" "$output_dir\LICENSE.txt"
-Copy-Item "$package_dir\VERIFICATION.txt" "$output_dir\VERIFICATION.txt"
 
-Remove-Item "$script_dir\*.nupkg"
+Copy-Item "$package_dir\chocolateyInstall.ps1" "$output_dir\chocolateyInstall.ps1"
 
 # Create package
 choco pack --version $version_number git-diff-xlsx/git-diff-xlsx.nuspec
+
+# Test install
+choco uninstall git-diff-xlsx --force
+choco install git-diff-xlsx -dv -source "'.;https://chocolatey.org/api/v2/'"
