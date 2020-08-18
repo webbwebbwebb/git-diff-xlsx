@@ -6,7 +6,7 @@
     <title>git-diff-xlsx</title>
     <version>0.0.0</version>
     <authors>Mark Webb</authors>
-    <summary>Command line tool which enables git to provide a readable diff of Excel .xslx files</summary>
+    <summary>Command line tool which produces a readable output from Excel xlsx files, enabling comparison with git diff tools.</summary>
     <projectUrl>https://github.com/webbwebbwebb/git-diff-xlsx</projectUrl>
     <tags>git-diff-xlsx git diff xlsx</tags>
     <iconUrl>https://cdn.statically.io/gh/webbwebbwebb/git-diff-xlsx/646e1c8d/icon/diff-icon-256.png</iconUrl>
@@ -14,9 +14,18 @@
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <owners>Mark Webb</owners>
     <description><![CDATA[# git-diff-xlsx
-Command line tool which enables git to provide a readable diff of Excel .xslx files
+Command line tool which produces a readable output from Excel xlsx files, enabling comparison with git diff tools.
+
+## Pre-requisites
+
+- .NET Core Runtime 3.1 (or greater) 
+    
+    Install via chocolatey ```choco install dotnetcore-runtime``` or download from https://dotnet.microsoft.com/download/dotnet-core/3.1
 
 ## Post installation
+
+### Update your Git configuration
+
 Add these lines to .gitconfig
 ```
 [diff "git-diff-xlsx"]
@@ -27,9 +36,6 @@ Add this line to .gitattributes
 ```
 *.xlsx diff=git-diff-xlsx
 ```]]></description>
-  <dependencies>
-    <dependency id="dotnetcore-runtime" version="3.1.0" />
-  </dependencies>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
