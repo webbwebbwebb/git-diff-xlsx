@@ -31,8 +31,10 @@ $verification_content = Get-Content -Path "$package_dir\VERIFICATION.template.tx
 $verification_content = $verification_content.Replace("[!!VERSION_NUMBER!!]", $version_number).Replace("[!!CHECKSUM!!]", $checksum)
 Out-File -FilePath "$output_dir\VERIFICATION.txt" -InputObject $verification_content
 
-# Copy licence
-Copy-Item "$script_dir\..\..\LICENSE" "$output_dir\LICENSE.txt"
+# Generate licence file
+$licence_content = Get-Content -Path "$script_dir\..\..\LICENSE" -Raw
+$licence_content = "From https://github.com/webbwebbwebb/git-diff-xlsx/blob/master/LICENSE `n`n" + $licence_content
+Out-File -FilePath "$output_dir\LICENSE.txt" -InputObject $licence_content
 
 Copy-Item "$package_dir\chocolateyInstall.ps1" "$output_dir\chocolateyInstall.ps1"
 

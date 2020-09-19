@@ -8,19 +8,17 @@
     <authors>Mark Webb</authors>
     <summary>Command line tool which produces a readable output from Excel xlsx files, enabling comparison with git diff tools.</summary>
     <projectUrl>https://github.com/webbwebbwebb/git-diff-xlsx</projectUrl>
+    <projectSourceUrl>https://github.com/webbwebbwebb/git-diff-xlsx</projectSourceUrl>
+    <packageSourceUrl>https://github.com/webbwebbwebb/git-diff-xlsx/tree/master/install/chocolatey/git-diff-xlsx</packageSourceUrl>
     <tags>git-diff-xlsx git diff xlsx</tags>
     <iconUrl>https://cdn.statically.io/gh/webbwebbwebb/git-diff-xlsx/646e1c8d/icon/diff-icon-256.png</iconUrl>
     <licenseUrl>https://github.com/webbwebbwebb/git-diff-xlsx/blob/master/LICENSE</licenseUrl>
+    <docsUrl>https://github.com/webbwebbwebb/git-diff-xlsx/blob/master/README.md</docsUrl>
+    <bugTrackerUrl>https://github.com/webbwebbwebb/git-diff-xlsx/issues</bugTrackerUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <owners>Mark Webb</owners>
     <description><![CDATA[# git-diff-xlsx
 Command line tool which produces a readable output from Excel xlsx files, enabling comparison with git diff tools.
-
-## Pre-requisites
-
-- .NET Core Runtime 3.1 (or greater) 
-    
-    Install via chocolatey ```choco install dotnetcore-runtime``` or download from https://dotnet.microsoft.com/download/dotnet-core/3.1
 
 ## Post installation
 
@@ -36,6 +34,9 @@ Add this line to .gitattributes
 ```
 *.xlsx diff=git-diff-xlsx
 ```]]></description>
+  <dependencies>
+    <dependency id="dotnetcore-runtime" version="3.1.0" />
+  </dependencies>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
