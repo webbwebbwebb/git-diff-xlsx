@@ -22,7 +22,7 @@ namespace git_diff_xlsx
 
                 PrintSheetNames(sheetNames, output);
 
-                PrintLastEditedBy(document.PackageProperties, output);
+                PrintLastEditedBy(document.PackageProperties.LastModifiedBy, output);
 
                 string[] sharedStringTable = document.WorkbookPart.SharedStringTablePart.SharedStringTable
                     .Elements<SharedStringItem>()
@@ -70,9 +70,9 @@ namespace git_diff_xlsx
             output.Write($"{string.Join(",", sheetNames.Select(x => x.Value))}\n");
         }
 
-        private void PrintLastEditedBy(PackageProperties documentProperties, TextWriter output)
+        private void PrintLastEditedBy(string LastModifiedBy, TextWriter output)
         {
-            output.Write($"File last edited by {documentProperties.LastModifiedBy}\n");
+            output.Write($"File last edited by {LastModifiedBy}\n");
         }
 
         private void PrintSheetContent(WorksheetPart worksheetPart, string worksheetName, string[] sharedStringTable, Dictionary<int, string> numberingFormatsByStyleIndex, TextWriter output)

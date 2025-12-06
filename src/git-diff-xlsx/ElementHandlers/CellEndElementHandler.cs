@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Globalization;
 
 namespace git_diff_xlsx.ElementHandlers
 {
@@ -33,7 +34,8 @@ namespace git_diff_xlsx.ElementHandlers
 
             if(!string.IsNullOrEmpty(value) && cellContext.StyleIndex.HasValue && _numberingFormatsByStyleIndex.TryGetValue(cellContext.StyleIndex.Value, out var numberingFormat))
             {
-                value = double.Parse(value).ToString(numberingFormat.Replace('_', ' '));
+                if (double.TryParse(value, NumberStyles.Number, CultureInfo.InvariantCulture, out var d))
+                    value = d.ToString(numberingFormat.Replace('_', ' '), CultureInfo.InvariantCulture);
             }
 
             return string.IsNullOrEmpty(value) && string.IsNullOrEmpty(cellContext.Formula)

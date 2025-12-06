@@ -3,9 +3,9 @@ Command line tool which produces a readable output from Excel xlsx files, enabli
 
 ## Pre-requisites
 
-- .NET Core Runtime 3.1 (or greater) 
+- .NET Runtime 9.0 (or greater) 
     
-    Install via chocolatey ```choco install dotnetcore-runtime``` or download from https://dotnet.microsoft.com/download/dotnet-core/3.1
+    Install via winget ``winget install Microsoft.DotNet.Runtime.9`` or download from https://dotnet.microsoft.com/en-us/download/dotnet/9.0/runtime
 
 ## Installation
 
